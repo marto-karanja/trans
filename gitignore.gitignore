@@ -146,6 +146,6 @@ cython_debug/
 */__pycache__/
 */httpcache/
 */.scrapy/
-**/__pycache__/
-**/httpcache/
-**/.scrapy/
+*/*/__pycache__/
+*/*/httpcache/
+*/*/.scrapy/
