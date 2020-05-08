@@ -1,0 +1,58 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+	Page not found -Transtutors
+</title><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /><meta name="ROBOTS" content="NOINDEX, NOFOLLOW" /><link href="../../../Resources/css/style.css" rel="stylesheet" type="text/css" /></head>
+<body>
+    <form method="post" action="../../../errorpages/error.aspx?code=404" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTk3ODUzNjk2N2RkJvphrRH6EncXVuMtQ0cMNS1JwO0=" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="58043A96" />
+</div>
+    <div class="errormain">
+        <br clear="all" />
+        <div class="errorcont">
+            <div class="errortopbg">
+                <div class="errorlogo">
+                </div>
+            </div>
+            <div class="errormidbg">
+                <div class="smilyico">
+                </div>
+                <br clear="all"/>
+                <div class="oops">
+                    Oops!
+                </div>
+                <div class="errorname">
+                    We don't seem to have the page you requested for.
+                </div>
+                <div class="errortext">
+                    Guess it's time to pull up our technical team!
+                </div>
+                <div class="linkshead">
+                    Here are some useful links for you :
+                </div>
+                <br clear="all"/>
+            </div>
+            <div class="errorbtm">
+                <div class="btmlink">
+                    <ul>
+                        <li><a href="https://www.transtutors.com/">Ask Homework Help</a> </li>
+                        <li><a href="https://www.transtutors.com/questions/assignment-solutions/">Search for your Study Question</a> </li>
+                        <li><a href="https://www.transtutors.com/">Home</a></li>
+                    </ul>
+                    <br clear="all"/>
+                </div>
+                <br clear="all"/>
+            </div>
+        </div>
+    </div>
+    </form>
+</body>
+</html>
