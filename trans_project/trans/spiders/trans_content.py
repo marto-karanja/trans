@@ -1,5 +1,5 @@
 import scrapy
-import MySQLdb
+import mysql.connector
 import csv
 import socket
 import datetime
@@ -24,14 +24,14 @@ class TransContent(scrapy.Spider):
         'trans.pipelines.mysql.ContentWriter': 700,
         },
     }
-    category = ['humanities']
+    category = ['economy']
 
     def start_requests(self):
         """1. access database
             2. fetch links
             3. Yield links for processing"""
         # open database connection and fetch links
-        conn = MySQLdb.connect(user='kush', passwd='incorrect', db='crawls', host='localhost', charset="utf8", use_unicode=True)
+        conn = mysql.connector.connect(user='kush', passwd='incorrect', db='crawls', host='localhost', charset="utf8", use_unicode=True)
         cursor = conn.cursor()
         cursor.execute('SELECT link_no, link FROM trans_links where category = %s and processed="False" order by link_no;',(self.category))
         rows = cursor.fetchall()
@@ -49,7 +49,7 @@ class TransContent(scrapy.Spider):
         content = response.css("#divDescription::text").extract()
         content = Join()(content)
         content = content.strip()
-        if (content is ''):
+        if (content == ''):
             content = response.css('.question-statement-complete-styling::text').extract()
             content = Join()(content)
             content = content.strip()

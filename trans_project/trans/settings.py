@@ -14,7 +14,7 @@ BOT_NAME = 'trans'
 SPIDER_MODULES = ['trans.spiders']
 NEWSPIDER_MODULE = 'trans.spiders'
 
-LOG_FILE = 'C:\\Users\\Admin\\Documents\\projects\\crawler\\Devt\\trans\\humanities_content_8_may.log'
+LOG_FILE = 'C:\\Users\\Admin\\Documents\\projects\\crawler\\Devt\\trans\\econ_dec_20.log'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/601.7.7 (KHTML, like Gecko) Version/9.1.2 Safari/601.7.7'
@@ -84,7 +84,7 @@ AUTOTHROTTLE_TARGET_CONCURRENCY = 0.25
 
 # Enable and configure HTTP caching (disabled by default)
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html#httpcache-middleware-settings
-HTTPCACHE_ENABLED = True
+HTTPCACHE_ENABLED = False
 #HTTPCACHE_EXPIRATION_SECS = 0
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []

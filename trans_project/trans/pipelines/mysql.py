@@ -1,7 +1,7 @@
 import traceback
 
 import dj_database_url
-import MySQLdb
+import mysql.connector
 
 from twisted.internet import defer
 from twisted.enterprise import adbapi
@@ -38,7 +38,7 @@ class ContentWriter(object):
 
         # Parse MySQL URL and try to initialize a connection
         conn_kwargs = ContentWriter.parse_mysql_url(mysql_url)
-        self.dbpool = adbapi.ConnectionPool('MySQLdb', charset='utf8', use_unicode=True, connect_timeout=5, **conn_kwargs)
+        self.dbpool = adbapi.ConnectionPool('mysql.connector', charset='utf8', use_unicode=True, connect_timeout=5, **conn_kwargs)
 
 
     def close_spider(self, spider):
@@ -54,7 +54,7 @@ class ContentWriter(object):
         try:
             yield self.dbpool.runInteraction(self.do_insert, item, )
             self.logger.info("[%s]: successfully processed", item["link_no"][0])
-        except MySQLdb.OperationalError:
+        except mysql.connector.Error:
             if self.report_connection_error:
                 self.logger.error("Can't connect to MySQL: %s" % self.mysql_url)
                 print(traceback.format_exc())
@@ -86,7 +86,7 @@ class ContentWriter(object):
         
         tx.execute(sql, args)
         #update db records
-        tx.execute("""UPDATE sol_links set processed = 'True' where link_no = %s""",(link_no,))
+        tx.execute("""UPDATE trans_links set processed = 'True' where link_no = %s""",(link_no,))
 
 
     @staticmethod

@@ -1,7 +1,8 @@
 import traceback
 
 import dj_database_url
-import MySQLdb
+import mysql.connector
+
 
 from twisted.internet import defer
 from twisted.enterprise import adbapi
@@ -37,7 +38,7 @@ class LinkSaver(object):
 
         # Parse MySQL URL and try to initialize a connection
         conn_kwargs = LinkSaver.parse_mysql_url(mysql_url)
-        self.dbpool = adbapi.ConnectionPool('MySQLdb', charset='utf8', use_unicode=True, connect_timeout=5, **conn_kwargs)
+        self.dbpool = adbapi.ConnectionPool('mysql.connector', charset='utf8', use_unicode=True, connect_timeout=5, **conn_kwargs)
 
 
 
@@ -53,7 +54,7 @@ class LinkSaver(object):
 
         try:
             yield self.dbpool.runInteraction(self.do_insert, item)
-        except MySQLdb.OperationalError:
+        except mysql.connector.Error:
             if self.report_connection_error:
                 logger.error("Can't connect to MySQL: %s" % self.mysql_url)
                 print(traceback.format_exc())

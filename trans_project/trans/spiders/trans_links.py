@@ -9,8 +9,8 @@ from trans.items import LinkItem
 class LinksSpider(scrapy.Spider):
     """ trans links spider"""
     name = "trans_links"
-    category = ['psychology']
-    start_urls = ['https://www.transtutors.com/questions/humanities/psychology/']
+    category = ['net programming']
+    start_urls = ['https://www.transtutors.com/questions/computer-science/programming-languages/programming-in-net/']
 
     custom_settings = {
         'DOWNLOAD_DELAY' : '85',
